@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import PostComponent from "../features/Posts/post/PostComponent";
+import styles from "./home.module.css";
 
 export default function Home() {
   const [posts, setPosts] = useState({});
@@ -29,18 +31,16 @@ export default function Home() {
   if (error) {
     return <p>{error}</p>;
   }
-  console.log(posts.posts);
+  console.log(posts);
 
   return (
     <>
       <main>
         <h1>Hello</h1>
         <h2>I'm a homepage</h2>
-        <section className="posts">
+        <section className={styles.posts}>
           {posts.map((post) => (
-            <div className="post" key={post.id}>
-              <h2>{post.title}</h2>
-            </div>
+            <PostComponent post={post} key={post.id} />
           ))}
         </section>
       </main>
