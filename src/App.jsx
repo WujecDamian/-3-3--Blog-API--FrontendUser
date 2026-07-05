@@ -1,14 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
-import heroImg from "./assets/hero.png";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Register from "./pages/Register";
+import Post from "./pages/Post";
+import LogIn from "./pages/LogIn";
+
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>Hi this is App.jsx</h1>
-    </>
+    <Router>
+      <Routers>
+        <Route path="/" element={<RootLayout></RootLayout>}>
+          <Router index element={<Home></Home>}></Router>
+          <Router path="register" element={<Register></Register>}></Router>
+          <Router path="log-in" element={<LogIn></LogIn>}></Router>
+          <Router path="post/:postId" element={<Post></Post>}></Router>
+        </Route>
+      </Routers>
+    </Router>
   );
 }
 
