@@ -1,7 +1,9 @@
+import styles from "./footer.module.css";
+
 function Footer() {
   return (
-    <footer>
-      <span>Footer</span>
+    <footer className={styles.footer}>
+      <span>Created by Pieciks &copy;</span>
     </footer>
   );
 }
