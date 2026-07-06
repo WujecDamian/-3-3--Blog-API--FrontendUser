@@ -8,7 +8,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  //const navigate = useNavigate(); Maybe implement in future (currently not working as intended)
 
   const handleChange = (e, name) => {
     if (name === "email") {
