@@ -14,7 +14,7 @@ function NavBar() {
       {user ? (
         <>
           <Link
-            to="/log-out"
+            to="/"
             className={`${styles.link}, ${styles.last__link}`}
             onClick={logout}
           >
@@ -24,16 +24,12 @@ function NavBar() {
         </>
       ) : (
         <>
-          <Link to="/log-in" className={styles.link}>
+          <Link to="/log-in" className={`${styles.link}, ${styles.last__link}`}>
             Log In
           </Link>
-          <Link
-            to="/register"
-            className={`${styles.link}, ${styles.last__link}`}
-          >
+          <Link to="/register" className={`${styles.link}`}>
             Register
           </Link>
-          <p className={styles.username}></p>
         </>
       )}
     </nav>
