@@ -46,7 +46,7 @@ export default function Post() {
       <section className={styles.comments}>
         <NewComment postId={postId}></NewComment>
         {post.comments.map((comment) => (
-          <Comment postId={postId} comment={comment}></Comment>
+          <Comment postId={postId} comment={comment} key={comment.id}></Comment>
         ))}
       </section>
     </main>
