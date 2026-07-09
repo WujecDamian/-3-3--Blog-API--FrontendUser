@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/");
+        const response = await fetch("http://localhost:3000/api/publicPosts");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
