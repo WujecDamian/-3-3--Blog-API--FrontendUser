@@ -1,4 +1,6 @@
 .comment {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid gray;
   margin: 1rem auto;
   padding: 1rem;
