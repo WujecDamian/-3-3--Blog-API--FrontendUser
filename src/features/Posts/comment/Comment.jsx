@@ -5,7 +5,6 @@ import { User } from "../../../contexts/userContext";
 
 export default function Comment(props) {
   const { user } = User();
-  console.log(props);
 
   //if comment owner
   if (props.comment.authorId === user.id) {

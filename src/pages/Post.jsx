@@ -21,7 +21,6 @@ export default function Post() {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
-        console.log(result);
         setPost(result.post);
       } catch (error) {
         setError("Error fetching post: " + error.message);
@@ -31,7 +30,6 @@ export default function Post() {
     };
     fetchPost();
   }, []);
-  console.log(post.comments);
 
   if (loading) {
     return <p>Loading...</p>;

@@ -8,9 +8,15 @@ export default function UserContextProvider({ children }) {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
+    const token = localStorage.getItem("token");
+
     if (user) {
       const userObj = JSON.parse(user);
       setUser(userObj);
+    }
+
+    if (token) {
+      setToken(token);
     }
   }, []);
 
