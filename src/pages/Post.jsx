@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./Post.module.css";
 import SinglePostComponent from "../features/Posts/singlePost/SinglePostComponent";
+import NewComment from "../features/Posts/comment/NewComment";
+import Comment from "../features/Posts/comment/Comment";
 
 export default function Post() {
   const [post, setPost] = useState({});
@@ -19,6 +21,7 @@ export default function Post() {
           throw new Error("Network response was not ok");
         }
         const result = await response.json();
+        console.log(result);
         setPost(result.post);
       } catch (error) {
         setError("Error fetching post: " + error.message);
@@ -28,6 +31,7 @@ export default function Post() {
     };
     fetchPost();
   }, []);
+  console.log(post.comments);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -41,9 +45,11 @@ export default function Post() {
       <section className={styles.posts}>
         <SinglePostComponent post={post} key={post.id} />
       </section>
-      <section className="comments">
-        <NewCommentComponent postId={postId}></NewCommentComponent>
-        <CommentsComponent postId={postId}></CommentsComponent>
+      <section className={styles.comments}>
+        <NewComment postId={postId}></NewComment>
+        {post.comments.map((comment) => (
+          <Comment postId={postId} comment={comment}></Comment>
+        ))}
       </section>
     </main>
   );

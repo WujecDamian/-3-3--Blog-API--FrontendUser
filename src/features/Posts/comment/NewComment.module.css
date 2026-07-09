@@ -1,0 +1,21 @@
+.form {
+  width: 100%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 1rem;
+  input {
+    border-radius: 1rem;
+    outline: none;
+    border: 1px solid grey;
+    height: 3rem;
+  }
+  input[type="text"] {
+    width: 90%;
+  }
+  input[type="submit"] {
+    width: 20%;
+  }
+}
